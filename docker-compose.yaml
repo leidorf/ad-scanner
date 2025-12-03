@@ -1,0 +1,44 @@
+services:
+  samba-ad:
+    image: nowsci/samba-domain
+    container_name: samba-ad
+    environment:
+      - DOMAIN=MYCOMPANY.LOCAL
+      - DOMAINPASS=SecurePass123!
+      - DNSFORWARDER=8.8.8.8
+      - HOSTIP=172.20.0.2
+    ports:
+      - "53:53"
+      - "53:53/udp"
+      - "88:88"
+      - "88:88/udp"
+      - "135:135"
+      - "139:139"
+      - "138:138/udp"
+      - "445:445"
+      - "389:389"
+      - "389:389/udp"
+      - "636:636"
+      - "3268:3268"
+      - "3269:3269"
+    networks:
+      ad_network:
+        ipv4_address: 172.20.0.2
+
+  neo4j:
+  image: neo4j:latest
+  container_name: neo4j-graph
+  environment:
+    - NEO4J_AUTH=neo4j/123456789
+    - NEO4J_apoc_export_file_enabled=true
+    - NEO4J_apoc_import_file_enabled=true
+    - NEO4J_apoc_import_file_use__neo4j__config=true
+    - NEO4J_PLUGINS=["apoc"]
+  ports:
+    - "7474:7474" 
+    - "7687:7687" 
+  volumes:
+    - neo4j_data:/data
+    - neo4j_logs:/logs
+  networks:
+    - ad_network
