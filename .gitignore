@@ -1,0 +1,34 @@
+# ==========================================================
+# 1. İşletim Sistemi ve IDE Dosyaları
+# ==========================================================
+.DS_Store
+.vscode/
+.idea/
+*~
+*.user
+*.suo
+*.suo.lock
+*.sln.docstates
+*.vspscc
+.vs/
+ipch/
+
+[Bb]in/
+[Oo]bj/
+
+*.nupkg
+packages/
+*.nuget.cache
+*.pdb
+*.intellisense.json
+ad_data/
+neo4j_data/
+.seeded
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+*.log
+/logs
+/log

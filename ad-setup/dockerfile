@@ -1,0 +1,13 @@
+FROM ubuntu:latest
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && apt-get install -y \
+    samba \
+    ldap-utils \
+    netcat-openbsd \
+    --no-install-recommends \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY seed.sh /usr/local/bin/seed-run.sh
+RUN chmod +x /usr/local/bin/seed-run.sh
