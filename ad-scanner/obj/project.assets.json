@@ -1,69 +1,11 @@
 {
   "version": 3,
   "targets": {
-    "net10.0": {
-      "System.DirectoryServices/10.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net10.0/System.DirectoryServices.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net10.0/System.DirectoryServices.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        },
-        "runtimeTargets": {
-          "runtimes/win/lib/net10.0/System.DirectoryServices.dll": {
-            "assetType": "runtime",
-            "rid": "win"
-          }
-        }
-      }
-    }
+    "net10.0": {}
   },
-  "libraries": {
-    "System.DirectoryServices/10.0.0": {
-      "sha512": "Ha5HTPMXz785jI5bC6OpmlerevzKallwOQzdSflTYL3mEZVwU13qcqSvqCf+7fCHqdRh7Ct0EJDr80BEBXzZ0Q==",
-      "type": "package",
-      "path": "system.directoryservices/10.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "PACKAGE.md",
-        "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net8.0/_._",
-        "buildTransitive/netcoreapp2.0/System.DirectoryServices.targets",
-        "lib/net10.0/System.DirectoryServices.dll",
-        "lib/net10.0/System.DirectoryServices.xml",
-        "lib/net462/_._",
-        "lib/net8.0/System.DirectoryServices.dll",
-        "lib/net8.0/System.DirectoryServices.xml",
-        "lib/net9.0/System.DirectoryServices.dll",
-        "lib/net9.0/System.DirectoryServices.xml",
-        "lib/netstandard2.0/System.DirectoryServices.dll",
-        "lib/netstandard2.0/System.DirectoryServices.xml",
-        "runtimes/win/lib/net10.0/System.DirectoryServices.dll",
-        "runtimes/win/lib/net10.0/System.DirectoryServices.xml",
-        "runtimes/win/lib/net8.0/System.DirectoryServices.dll",
-        "runtimes/win/lib/net8.0/System.DirectoryServices.xml",
-        "runtimes/win/lib/net9.0/System.DirectoryServices.dll",
-        "runtimes/win/lib/net9.0/System.DirectoryServices.xml",
-        "system.directoryservices.10.0.0.nupkg.sha512",
-        "system.directoryservices.nuspec",
-        "useSharedDesignerContext.txt"
-      ]
-    }
-  },
+  "libraries": {},
   "projectFileDependencyGroups": {
-    "net10.0": [
-      "System.DirectoryServices >= 10.0.0"
-    ]
+    "net10.0": []
   },
   "packageFolders": {
     "C:\\Users\\daggu\\.nuget\\packages\\": {}
@@ -109,12 +51,6 @@
     "frameworks": {
       "net10.0": {
         "targetAlias": "net10.0",
-        "dependencies": {
-          "System.DirectoryServices": {
-            "target": "Package",
-            "version": "[10.0.0, )"
-          }
-        },
         "imports": [
           "net461",
           "net462",

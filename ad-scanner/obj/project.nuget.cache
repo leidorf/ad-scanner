@@ -1,10 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "l+C4/Vwx6wA=",
+  "dgSpecHash": "4qNdOQ7Y+q0=",
   "success": true,
   "projectFilePath": "C:\\Guray\\Kodlar\\ad-scanner\\ad-scanner\\ad-scanner.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\daggu\\.nuget\\packages\\system.directoryservices\\10.0.0\\system.directoryservices.10.0.0.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }
