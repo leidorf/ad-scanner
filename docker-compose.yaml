@@ -34,23 +34,24 @@ services:
     command: >
         bash -c "while ! nc -z ad-server 389; do echo 'Waiting for AD service (LDAP 389)...'; sleep 3; done; echo 'Port Open! Waiting 20s for DB init...'; sleep 20; /usr/local/bin/seed-run.sh"
     
-#  neo4j:
-#    image: neo4j:latest
-#    container_name: neo4j-graph
-#    environment:
-#      - NEO4J_AUTH=neo4j/123456789
-#      - NEO4J_apoc_export_file_enabled=true
-#      - NEO4J_apoc_import_file_enabled=true
-#      - NEO4J_apoc_import_file_use__neo4j__config=true
-#      - NEO4J_PLUGINS=["apoc"]
-#    ports:
-#      - "7474:7474"
-#      - "7687:7687"
-#    volumes:
-#      - neo4j_data:/data
-#      - neo4j_logs:/logs
-#    networks:
-#      - ad_network
+  neo4j:
+    build: 
+      context: ./neo4j
+    image: neo4j:latest
+    container_name: neo4j-graph
+    environment:
+      - NEO4J_AUTH=neo4j/123456789
+      - NEO4J_apoc_export_file_enabled=true
+      - NEO4J_apoc_import_file_enabled=true
+      - NEO4J_apoc_import_file_use__neo4j__config=true
+      - NEO4J_PLUGINS=["apoc"]
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    volumes:
+      - neo4j_data:/data
+    networks:
+      - ad_network
 #
 #  backend:
 #    build: ./backend
@@ -87,4 +88,4 @@ networks:
 
 volumes:
   ad_data:
-#  neo4j_data:
+  neo4j_data:

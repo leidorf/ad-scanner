@@ -1,9 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "rSujwKYF4xo=",
+  "dgSpecHash": "RcczvpCsEG4=",
   "success": true,
   "projectFilePath": "C:\\Guray\\Kodlar\\ad-scanner\\ad-scanner\\ad-scanner.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\daggu\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\5.0.0\\microsoft.bcl.asyncinterfaces.5.0.0.nupkg.sha512",
+    "C:\\Users\\daggu\\.nuget\\packages\\neo4j.driver.signed\\5.27.0\\neo4j.driver.signed.5.27.0.nupkg.sha512",
+    "C:\\Users\\daggu\\.nuget\\packages\\neo4jclient\\5.1.20\\neo4jclient.5.1.20.nupkg.sha512",
+    "C:\\Users\\daggu\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\daggu\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",
     "C:\\Users\\daggu\\.nuget\\packages\\system.directoryservices\\10.0.0\\system.directoryservices.10.0.0.nupkg.sha512"
   ],
   "logs": []

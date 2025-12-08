@@ -31,4 +31,14 @@ namespace ad_scanner.Models
         public List<AdComputer> Computers { get; set; } = new List<AdComputer>();
         public List<AdGroup> Groups { get; set; } = new List<AdGroup>();
     }
+
+    public class SecurityRelation
+    {
+        public string SourceSid { get; set; }
+        public string SourceDn { get; set; }
+        public string TargetSid { get; set; }
+        public string TargetDn { get; set; }
+        public string PermissionType { get; set; }
+        public string RelationshipLabel { get; set; }
+    }
 }

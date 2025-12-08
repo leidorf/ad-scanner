@@ -139,7 +139,7 @@ namespace ad_scanner.ActiveDirectory
         {
             var comp = new AdComputer();
             FillBase(comp, sr);
-            comp.OperatingSystem = GetProperty<string>(sr, "operatingSystem");
+            comp.OperatingSystem = GetProperty<string>(sr, "OperatingSystem");
             return comp;
         }
 
@@ -147,7 +147,7 @@ namespace ad_scanner.ActiveDirectory
         {
             var group = new AdGroup();
             FillBase(group, sr);
-            group.Description = GetProperty<string>(sr, "description");
+            group.Description = GetProperty<string>(sr, "Description");
             return group;
         }
 

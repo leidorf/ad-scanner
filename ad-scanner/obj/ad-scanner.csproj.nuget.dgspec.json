@@ -46,6 +46,10 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "dependencies": {
+            "Neo4jClient": {
+              "target": "Package",
+              "version": "[5.1.20, )"
+            },
             "System.DirectoryServices": {
               "target": "Package",
               "version": "[10.0.0, )"
