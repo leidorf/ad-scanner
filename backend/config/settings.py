@@ -9,11 +9,16 @@ https://docs.djangoproject.com/en/6.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
 """
-
+import os
 from pathlib import Path
 from neomodel import config
 
-NEOMODEL_NEO4J_BOLT_URL = "bolt://neo4j:123456789@localhost:7687"
+NEO4J_USER = os.environ.get('NEO4J_USER', 'neo4j')
+NEO4J_PASSWORD = os.environ.get('NEO4J_PASSWORD', '123456789')
+NEO4J_HOST = 'neo4j'
+NEO4J_PORT = 7687
+
+NEOMODEL_NEO4J_BOLT_URL = f"bolt://{NEO4J_USER}:{NEO4J_PASSWORD}@{NEO4J_HOST}:{NEO4J_PORT}"
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,7 +33,7 @@ SECRET_KEY = 'django-insecure-ll@0pgh+5kqeg4@%o^_2c19eb4m8ahzdp!ruue6(^b0j5uz0aw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
