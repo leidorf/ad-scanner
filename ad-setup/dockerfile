@@ -3,7 +3,8 @@ FROM alpine:latest
 RUN apk add --no-cache \
     bash \
     openldap-clients \
-    netcat-openbsd
+    netcat-openbsd \
+    curl
 
 COPY seed.sh /usr/local/bin/seed-run.sh
 RUN chmod +x /usr/local/bin/seed-run.sh

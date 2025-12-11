@@ -1,7 +1,7 @@
 services:
   ad-server:
     image: nowsci/samba-domain
-    container_name: ad_server
+    container_name: ad-server
     privileged: true
     environment:
       - "DOMAIN=corp.test.local"
@@ -22,7 +22,7 @@ services:
 
   ad-seeder:
     build: ./ad-setup       
-    container_name: ad_seeder
+    container_name: ad-seeder
     depends_on:
       - ad-server           
     networks:
@@ -38,7 +38,7 @@ services:
     build: 
       context: ./neo4j
     image: neo4j:latest
-    container_name: neo4j-graph
+    container_name: scanner-db
     environment:
       - NEO4J_AUTH=neo4j/123456789
       - NEO4J_apoc_export_file_enabled=true
@@ -68,16 +68,21 @@ services:
       - ad_network
     volumes:
       - ./backend:/app
-#
-#  frontend:
-#    build: ./frontend
-#    container_name: scanner-frontend
-#    ports:
-#      - "3000:80"
-#    depends_on:
-#      - backend
-#    networks:
-#      - ad_network
+
+  frontend:
+    build: 
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: scanner-frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    environment:
+      - VITE_API_URL=http://localhost:8000/api/v1
+    depends_on:
+      - backend
 
 networks:
   ad_network:
