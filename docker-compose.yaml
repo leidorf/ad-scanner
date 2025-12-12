@@ -35,8 +35,6 @@ services:
         bash -c "while ! nc -z ad-server 389; do echo 'Waiting for AD service (LDAP 389)...'; sleep 3; done; echo 'Port Open! Waiting 20s for DB init...'; sleep 20; /usr/local/bin/seed-run.sh"
     
   neo4j:
-    build: 
-      context: ./neo4j
     image: neo4j:latest
     container_name: scanner-db
     environment:

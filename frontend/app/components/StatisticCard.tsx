@@ -28,6 +28,7 @@ const CardConfig: Record<CardType, CardProps> = {
   },
 };
 
+// display stats based on ad object type colors & icons
 const StatisticCard = ({
   title,
   count,

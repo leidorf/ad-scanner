@@ -13,11 +13,13 @@ import os
 from pathlib import Path
 from neomodel import config
 
+# db connection variables
 NEO4J_USER = os.environ.get('NEO4J_USER', 'neo4j')
 NEO4J_PASSWORD = os.environ.get('NEO4J_PASSWORD', '123456789')
 NEO4J_HOST = 'neo4j'
 NEO4J_PORT = 7687
 
+# db connection url
 NEOMODEL_NEO4J_BOLT_URL = f"bolt://{NEO4J_USER}:{NEO4J_PASSWORD}@{NEO4J_HOST}:{NEO4J_PORT}"
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.

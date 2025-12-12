@@ -25,6 +25,7 @@ namespace Menu
             Console.WriteLine("Password girin (Password123!):");
             appConfig.password = Console.ReadLine();
 
+            // print the connected neo4j db infos
             Console.WriteLine("Neo4j Bilgileri");
             Console.WriteLine($"URI {appConfig.Neo4jUri}");
             Console.Write($"{appConfig.Neo4jUser}:{appConfig.Neo4jPassword}");
@@ -34,17 +35,21 @@ namespace Menu
             {
                 ScanResult results = scanner.ScanNetwork();
 
+                // print the scan results
                 Console.WriteLine("\n=== TARAMA SONUÇLARI ===");
                 Console.WriteLine($"Users: {results.Users.Count}");
                 Console.WriteLine($"Computers: {results.Computers.Count}");
                 Console.WriteLine($"Groups: {results.Groups.Count}");
 
+                // acl analyzer & db objects
                 INeo4jService dbService = new Neo4jService(appConfig);
                 IAclAnalyzer analyzer = new AclAnalyzerService();
 
+                // connect to the db and write the scan results
                 await dbService.ConnectAsync();
                 await dbService.WriteScanResultAsync(results);
 
+                // check for acls and if there any write to the db
                 List<SecurityRelation> relations = analyzer.Analyze(results);
                 if (relations != null && relations.Count > 0)
                 {

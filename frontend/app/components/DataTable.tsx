@@ -29,6 +29,7 @@ const colorMap = {
   },
 };
 
+// display datas on tanstacktable based on ad object type colors
 const DataTable = <TData, TValue>({
   data,
   columns,

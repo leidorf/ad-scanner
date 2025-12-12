@@ -17,6 +17,7 @@ namespace ad_scanner.Database
             _config = config;
         }
 
+        // check db connection
         public async Task ConnectAsync()
         {
             try
@@ -40,6 +41,7 @@ namespace ad_scanner.Database
             }
         }
 
+        // write ad scan results
         public async Task WriteScanResultAsync(ScanResult result)
         {
             if (_client == null || !_client.IsConnected)
@@ -50,6 +52,7 @@ namespace ad_scanner.Database
 
             Console.WriteLine("\nSonuçlar veri tabanına yazılıyor...");
 
+            // write ad users
             if (result.Users.Count > 0)
             {
                 Console.Write($"-> {result.Users.Count} Kullanıcı yazılıyor...");
@@ -64,6 +67,7 @@ namespace ad_scanner.Database
                 Console.WriteLine("OK.");
             }
 
+            // write ad computers
             if (result.Computers.Count > 0)
             {
                 Console.Write($"-> {result.Computers.Count} Bilgisayar yazılıyor...");
@@ -78,6 +82,7 @@ namespace ad_scanner.Database
                 Console.WriteLine("OK.");
             }
 
+            // write ad groups
             if (result.Groups.Count > 0)
             {
                 Console.Write($"-> {result.Groups.Count} Grup yazılıyor...");
@@ -95,6 +100,7 @@ namespace ad_scanner.Database
             Console.WriteLine("Veri tabanına yazma tamamlandı.");
         }
 
+        // write ad object acls
         public async Task WriteRelationsAsync(List<SecurityRelation> relations)
         {
             if (_client == null || !_client.IsConnected) return;

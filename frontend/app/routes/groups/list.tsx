@@ -8,6 +8,7 @@ import type { AdGroup } from "~/types";
 
 const columnHelper = createColumnHelper<AdGroup>();
 
+// create columns for tanstack table
 const columns = [
   columnHelper.accessor((row) => row.distinguished_name, {
     id: "distinguished_name",
@@ -33,6 +34,7 @@ const columns = [
 const GroupList = () => {
   const { data, isLoading, error } = useGroupList();
 
+  // error state
   if (error) {
     return <div>Hata: {(error as Error).message}</div>;
   }
@@ -41,8 +43,10 @@ const GroupList = () => {
     <div className="p-8 border border-blue-600 rounded-lg">
       <PageHeader title="Grup Listesi" count={data?.length || 0} />
       {isLoading ? (
+        // display ad groups
         <TableSkeleton columnCount={4} rowCount={10} />
       ) : (
+        // loading state
         <DataTable columns={columns} data={data || []} type="group" />
       )}
     </div>

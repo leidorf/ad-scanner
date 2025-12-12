@@ -29,7 +29,7 @@ namespace ad_scanner.ActiveDirectory
             return directoryEntry;
         }
 
-        // testing ad connection
+        // check ad-server connection
         public bool TestConnection()
         {
             try
@@ -52,6 +52,7 @@ namespace ad_scanner.ActiveDirectory
             }
         }
 
+        // scan ad objects
         public ScanResult ScanNetwork()
         {
             var result = new ScanResult();
@@ -72,6 +73,7 @@ namespace ad_scanner.ActiveDirectory
             return result;
         }
 
+        // scan objects properties
         private List<T> ScanGeneric<T>(DirectoryEntry rootEntry, string ldapFilter, Func<SearchResult, T> mapFunction)
         {
             List<T> list = new List<T>();
@@ -108,6 +110,7 @@ namespace ad_scanner.ActiveDirectory
             return list;
         }
 
+        // get objects common properties
         private void FillBase(AdEntity entity, SearchResult sr)
         {
             entity.DistinguishedName = GetProperty<string>(sr, "DistinguishedName");
@@ -122,6 +125,7 @@ namespace ad_scanner.ActiveDirectory
             entity.NTSecurityDescriptor = GetProperty<byte[]>(sr, "NTSecurityDescriptor");
         }
 
+        // get user properties
         private AdUser FillUser(SearchResult sr)
         {
             var user = new AdUser();
@@ -135,6 +139,7 @@ namespace ad_scanner.ActiveDirectory
             return user;
         }
 
+        // get computer properties
         private AdComputer FillComputer(SearchResult sr)
         {
             var comp = new AdComputer();
@@ -143,6 +148,7 @@ namespace ad_scanner.ActiveDirectory
             return comp;
         }
 
+        // get group properties
         private AdGroup FillGroup(SearchResult sr)
         {
             var group = new AdGroup();

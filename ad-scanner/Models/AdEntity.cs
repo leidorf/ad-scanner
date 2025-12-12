@@ -4,6 +4,7 @@ using System.Text;
 
 namespace ad_scanner.Models
 {
+    // abstract entity for ad objects
     public abstract class AdEntity
     {
         public string DistinguishedName { get; set; }
@@ -12,6 +13,7 @@ namespace ad_scanner.Models
         public DateTime? WhenCreated { get; set; }
     }
 
+    // ad object entities
     public class AdUser : AdEntity
     {
         public string ServicePrincipalName { get; set; }
@@ -25,6 +27,7 @@ namespace ad_scanner.Models
         public string Description { get; set; }
     }
 
+    // ad scan result entity
     public class ScanResult
     {
         public List<AdUser> Users { get; set; } = new List<AdUser>();
@@ -32,6 +35,7 @@ namespace ad_scanner.Models
         public List<AdGroup> Groups { get; set; } = new List<AdGroup>();
     }
 
+    // ad acl entity
     public class SecurityRelation
     {
         public string SourceSid { get; set; }

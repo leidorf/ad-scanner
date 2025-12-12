@@ -13,6 +13,7 @@ const colorMap = {
   },
 };
 
+// display data based on ad object type colors with label 
 const DataField = ({
   title,
   data,

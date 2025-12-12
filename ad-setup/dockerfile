@@ -6,6 +6,7 @@ RUN apk add --no-cache \
     netcat-openbsd \
     curl
 
+# add test ad objects to the ad-server 
 COPY seed.sh /usr/local/bin/seed-run.sh
 RUN chmod +x /usr/local/bin/seed-run.sh
 

@@ -41,6 +41,7 @@ const fetchGroup = async (dn: string): Promise<AdGroup> => {
     return response.data;
 };
 
+// get dashboard stats
 export function useDashboardStats() {
     return useQuery({
         queryKey: ['dashboardStats'],
@@ -48,6 +49,7 @@ export function useDashboardStats() {
     });
 }
 
+// get all ad users
 export function useUserList() {
     return useQuery({
         queryKey: ['users'],
@@ -55,6 +57,7 @@ export function useUserList() {
     });
 }
 
+// get single ad user by distinguished name
 export function useUserDetail(dn: string | undefined) {
     return useQuery({
         queryKey: ['users', dn],
@@ -63,6 +66,7 @@ export function useUserDetail(dn: string | undefined) {
     });
 }
 
+// get all ad computers
 export function useComputerList() {
     return useQuery({
         queryKey: ['computers'],
@@ -70,6 +74,7 @@ export function useComputerList() {
     });
 }
 
+// get single ad computer by distinguished name
 export function useComputerDetail(dn: string | undefined) {
     return useQuery({
         queryKey: ['computers', dn],
@@ -78,6 +83,7 @@ export function useComputerDetail(dn: string | undefined) {
     });
 }
 
+// get all ad groups
 export function useGroupList() {
     return useQuery({
         queryKey: ['groups'],
@@ -85,6 +91,7 @@ export function useGroupList() {
     });
 }
 
+// get single ad group by distinguished name
 export function useGroupDetail(dn: string | undefined) {
     return useQuery({
         queryKey: ['groups', dn],
