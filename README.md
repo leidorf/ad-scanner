@@ -54,4 +54,4 @@ Backend endpointleri şu şekildedir:
 - /api/v1/dashboard/stats
 
 ---
-Bu proje Forestal Full Stack Developer - Challenge yönergeleri doğrultusunda gerçekleştirilmiştir.
+Bu proje Forestall Full Stack Developer Case yönergeleri doğrultusunda gerçekleştirilmiştir.
