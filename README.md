@@ -52,6 +52,3 @@ Backend endpointleri şu şekildedir:
 - /api/v1/groups
 - /api/v1/groups/{objectDistinguishedName}
 - /api/v1/dashboard/stats
-
----
-Bu proje Forestall Full Stack Developer Case yönergeleri doğrultusunda gerçekleştirilmiştir.
